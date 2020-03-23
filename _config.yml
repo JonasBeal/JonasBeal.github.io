@@ -82,13 +82,13 @@ analytics:
 author:
   name             : "Test"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
+  bio              : "PhD student in Systems Biology and Biostatistics"
   location         : "Paris, France"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=Jonas+béal"
+  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=Jonas+béal"
   googlescholar    : "https://scholar.google.fr/citations?user=iwIlGmUAAAAJ&hl=fr&oi=ao"
   email            :
-  researchgate     :  "https://www.researchgate.net/profile/Jonas_Beal"
+  researchgate     :  #"https://www.researchgate.net/profile/Jonas_Beal"
   uri              :
   bitbucket        :
   codepen          :
