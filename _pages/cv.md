@@ -1,10 +1,10 @@
 ---
 layout: archive
 title: "CV"
-permalink: /files/CV_JonasBEAL.pdf
+permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
 ---
 
-Test
+<a href="JonasBeal.github.io/files/CV_JonasBEAL.pdf" target="_blank">PDF.</a>
