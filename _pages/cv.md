@@ -7,4 +7,4 @@ redirect_from:
   - /resume
 ---
 
-<a href="JonasBeal.github.io/files/CV_JonasBEAL.pdf" target="_blank">PDF.</a>
+<a href="/files/CV_JonasBEAL.pdf" target="_blank">PDF.</a>
