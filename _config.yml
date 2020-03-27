@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/JonasBeal"
+  github           : "JonasBeal"
   google_plus      :
   keybase          :
   instagram        :
@@ -309,3 +309,17 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+scholar:
+  style: ./_bibliography/customized-jse.csl
+  locale: en
+
+  sort_by: year
+  order: descending
+
+  source: ./_bibliography # where .bib is saved
+  bibliography: beal.bib # .bib file
+  # To display additional infos
+  bibliography_template: bibliography #./_layouts/bibliography.html
+
+  query: "@*"
