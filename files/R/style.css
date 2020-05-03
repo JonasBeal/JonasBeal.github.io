@@ -1,0 +1,32 @@
+.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+.sucrebox {
+  padding: 1em 1em 0.3em 1em;
+  background: WhiteSmoke;
+  color: black;
+  border: 2px solid DarkSalmon;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.salebox {
+  padding: 1em 1em 0.3em 1em;
+  background: WhiteSmoke;
+  color: black;
+  border: 2px solid DarkSeaGreen;
+  border-radius: 20px;
+  text-align: center;
+}
