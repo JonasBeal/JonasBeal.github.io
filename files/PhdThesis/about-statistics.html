@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="about-logical-models.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="résumé-détaillé.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -246,6 +246,12 @@
 <li class="chapter" data-level="C.2.4" data-path="about-statistics.html"><a href="about-statistics.html#appendix-TMLE"><i class="fa fa-check"></i><b>C.2.4</b> TMLE</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="D" data-path="résumé-détaillé.html"><a href="résumé-détaillé.html"><i class="fa fa-check"></i><b>D</b> Résumé détaillé</a><ul>
+<li class="chapter" data-level="D.1" data-path="résumé-détaillé.html"><a href="résumé-détaillé.html#modélisation-et-cancer"><i class="fa fa-check"></i><b>D.1</b> Modélisation et cancer</a></li>
+<li class="chapter" data-level="D.2" data-path="résumé-détaillé.html"><a href="résumé-détaillé.html#des-modèles-logiques-personnalisés-de-cancer"><i class="fa fa-check"></i><b>D.2</b> Des modèles logiques personnalisés de cancer</a></li>
+<li class="chapter" data-level="D.3" data-path="résumé-détaillé.html"><a href="résumé-détaillé.html#quantification-statistique-de-limpact-clinique-des-modèles"><i class="fa fa-check"></i><b>D.3</b> Quantification statistique de l'impact clinique des modèles</a></li>
+<li class="chapter" data-level="D.4" data-path="résumé-détaillé.html"><a href="résumé-détaillé.html#conclusion-1"><i class="fa fa-check"></i><b>D.4</b> Conclusion</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -362,7 +368,7 @@ I(a,k) = \left\{
 </div>
 <div id="appendix-TMLE" class="section level3">
 <h3><span class="header-section-number">C.2.4</span> TMLE</h3>
-<p>Targeted maximum likelihood estimation is framework based on a doubly robust maximum-likelihood–based approach that includes a “targeting” step that optimizes the bias-variance trade-off for a defined target parameter. In particular, this method is perfectly compatible with the use of machine learning algorithms for outcome or treatment models. A detailed description of the method and its implementations can be found in <span class="citation">Van der Laan and Rose (<a href="#ref-van2011targeted">2011</a>)</span>.</p>
+<p>Targeted maximum likelihood estimation is framework based on a doubly robust maximum-likelihood–based approach that includes a &quot;targeting&quot; step that optimizes the bias-variance trade-off for a defined target parameter. In particular, this method is perfectly compatible with the use of machine learning algorithms for outcome or treatment models. A detailed description of the method and its implementations can be found in <span class="citation">Van der Laan and Rose (<a href="#ref-van2011targeted">2011</a>)</span>.</p>
 <p>The implementation proposed in this article is very similar to the one proposed in a recent tutorial concerning the application to binary processing <span class="citation">(Luque-Fernandez et al. <a href="#ref-luque2018targeted">2018</a>)</span>. The specific characteristics of the problem of precision medicine studied here lead to modify this approach. In particular, the outcome and treatment models used in the first steps are modified in the same way as the one explained for the standardized estimators (outcome model) and for the IPW estimators (treatment model). The step of updating the estimates is done on a model similar to <span class="citation">Luque-Fernandez et al. (<a href="#ref-luque2018targeted">2018</a>)</span>.</p>
 <p>The algorithm used for the models internal to the TMLE are, as much as possible, the same as those used for the standardised and IPW estimators:</p>
 <ul>
@@ -406,7 +412,7 @@ I(a,k) = \left\{
         </div>
       </div>
 <a href="about-logical-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="résumé-détaillé.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
