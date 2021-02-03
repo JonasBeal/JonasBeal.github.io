@@ -1,6 +1,3 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
-\PassOptionsToPackage{hyphens}{url}
-%
 \documentclass[]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -9,34 +6,31 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
 \else % if luatex or xelatex
-  \usepackage{unicode-math}
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
+\usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\usepackage[unicode=true]{hyperref}
 \hypersetup{
             pdftitle={Saisons \& inspirations},
             pdfauthor={Honorine et Jonas},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{plainnat}
 \usepackage{longtable,booktabs}
-% Fix footnotes in tables (requires footnote package)
-\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -46,6 +40,12 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -59,12 +59,6 @@
 \let\oldsubparagraph\subparagraph
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
-
-% set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-
 \usepackage{booktabs}
 \usepackage{amsthm}
 \makeatletter
@@ -99,12 +93,10 @@
   coltext=black,
   boxsep=5pt,
   arc=4pt}
-\usepackage[]{natbib}
-\bibliographystyle{plainnat}
 
 \title{Saisons \& inspirations}
 \author{Honorine et Jonas}
-\date{2020-05-03}
+\date{2021-02-03}
 
 \begin{document}
 \maketitle
@@ -113,28 +105,24 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{Pruxe9ambule}{%
-\chapter*{Préambule}\label{Pruxe9ambule}}
+\chapter*{Préambule}\label{Pruxe9ambule}
 \addcontentsline{toc}{chapter}{Préambule}
 
-Ceci est notre livre de recettes
-
 \begin{quote}
-La perfection est atteinte, non pas lorsqu'il n'y a plus rien à ajouter, mais lorsqu'il n'y a plus rien à retirer
+La perfection est atteinte, non pas lorsqu'il n'y a plus rien à ajouter,
+mais lorsqu'il n'y a plus rien à retirer
 
 Antoine de Saint-Exupéry
 \end{quote}
 
-\hypertarget{hiver}{%
-\chapter*{Hiver}\label{hiver}}
+\chapter*{Hiver}\label{hiver}
 \addcontentsline{toc}{chapter}{Hiver}
 
-\hypertarget{saluxe9}{%
-\section*{Salé}\label{saluxe9}}
+\section*{Salé}\label{saluxe9}
 \addcontentsline{toc}{section}{Salé}
 
-\hypertarget{linguines-citron-et-coriandre}{%
-\subsection*{\texorpdfstring{{Linguines citron et coriandre}}{Linguines citron et coriandre}}\label{linguines-citron-et-coriandre}}
+\subsection*{\texorpdfstring{{Linguines citron et
+coriandre}}{Linguines citron et coriandre}}\label{linguines-citron-et-coriandre}
 \addcontentsline{toc}{subsection}{{Linguines citron et coriandre}}
 
 \begin{salebox}
@@ -144,7 +132,7 @@ Temps cuisson : 10 min}
 Plat de pâtes simple et rapide mais percutant !
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -169,17 +157,20 @@ Plat de pâtes simple et rapide mais percutant !
 \item
   Eplucher l'ail et la couper en petits morceaux
 \item
-  Faire fondre un peu de beurre dans une casserole et y faire revenir à feu doux le zeste du/des citrons et l'ail
+  Faire fondre un peu de beurre dans une casserole et y faire revenir à
+  feu doux le zeste du/des citrons et l'ail
 \item
   Faire chauffer l'eau des pâtes (dans une autre casserole bien sûr)
 \item
-  Rajouter le jus de citron et 5 à 6 cs de crème dans la sauce. Laisser s'amalgamer à feu doux
+  Rajouter le jus de citron et 5 à 6 cs de crème dans la sauce. Laisser
+  s'amalgamer à feu doux
 \item
   Cuire les pâtes, 1 à 2 min de moins que nécessaire
 \item
   Mettre 1 ou 2 cs d'eau de cuisson des pâtes dans la sauce
 \item
-  Égoutter les pâtes et les mettre directement dans la sauce où elles finiront de cuire en s'imbibant de sauce.
+  Égoutter les pâtes et les mettre directement dans la sauce où elles
+  finiront de cuire en s'imbibant de sauce.
 \item
   Ciseler la coriandre et l'ajouter
 \item
@@ -188,8 +179,8 @@ Plat de pâtes simple et rapide mais percutant !
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{couscous-boulette-vuxe9guxe9tarien}{%
-\subsection*{\texorpdfstring{{Couscous boulette végétarien}}{Couscous boulette végétarien}}\label{couscous-boulette-vuxe9guxe9tarien}}
+\subsection*{\texorpdfstring{{Couscous boulette
+végétarien}}{Couscous boulette végétarien}}\label{couscous-boulette-vuxe9guxe9tarien}
 \addcontentsline{toc}{subsection}{{Couscous boulette végétarien}}
 
 \begin{salebox}
@@ -199,7 +190,7 @@ min \textbar{} Temps cuisson : 20 min}
 Pour un plat chaleureux et convivial au coeur de l'hiver.
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -236,21 +227,25 @@ Pour un plat chaleureux et convivial au coeur de l'hiver.
 \item
   Mélanger, assaisonner et mettre au réfrigérateur (facultatif)
 \item
-  Préchauffer le four à 180°C et préparer une feuille de papier sulfurisé sur la plaque
+  Préchauffer le four à 180°C et préparer une feuille de papier
+  sulfurisé sur la plaque
 \item
-  Former une quinzaine de boulettes, poser les sur la plaque et les badigeonner d'un peu d'huile avec un pinceau
+  Former une quinzaine de boulettes, poser les sur la plaque et les
+  badigeonner d'un peu d'huile avec un pinceau
 \item
   Enfourner pour une vingtaine de minutes
 \item
-  Servir avec des légumes (courges, patates douces, navets, carottes, pois chiches, blettes selon les envies et la saison) cuits dans du concentré de tomates et des épices, et de la semoule
+  Servir avec des légumes (courges, patates douces, navets, carottes,
+  pois chiches, blettes selon les envies et la saison) cuits dans du
+  concentré de tomates et des épices, et de la semoule
 \end{itemize}
 
 \begin{center}\includegraphics[width=0.9\linewidth]{photos/couscous} \end{center}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{risotto-pomme-noix-gorgonzola}{%
-\subsection*{\texorpdfstring{{Risotto pomme noix gorgonzola}}{Risotto pomme noix gorgonzola}}\label{risotto-pomme-noix-gorgonzola}}
+\subsection*{\texorpdfstring{{Risotto pomme noix
+gorgonzola}}{Risotto pomme noix gorgonzola}}\label{risotto-pomme-noix-gorgonzola}
 \addcontentsline{toc}{subsection}{{Risotto pomme noix gorgonzola}}
 
 \begin{salebox}
@@ -260,7 +255,7 @@ Temps cuisson : 30 min}
 Un risotto gourmand et fruité
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -287,15 +282,19 @@ Un risotto gourmand et fruité
 \item
   Faire chauffer de l'eau pour le bouillon
 \item
-  Les faire revenir dans un peu d'huile d'olive pendant 5 min puis ajouter le riz
+  Les faire revenir dans un peu d'huile d'olive pendant 5 min puis
+  ajouter le riz
 \item
   Une fois le riz transparent, déglacer au vin blanc
 \item
-  Une fois le vin blanc évaporé, commencer à rajouter de l'eau petit à petit jusqu'à ce que le riz soit cuit
+  Une fois le vin blanc évaporé, commencer à rajouter de l'eau petit à
+  petit jusqu'à ce que le riz soit cuit
 \item
-  Peler la pomme (pour faire un peu de déco comme sur la photo garder une longue épluchure)
+  Peler la pomme (pour faire un peu de déco comme sur la photo garder
+  une longue épluchure)
 \item
-  Un peu avant qu'il soit cuit, ajouter les pommes préalablement coupées en dés
+  Un peu avant qu'il soit cuit, ajouter les pommes préalablement coupées
+  en dés
 \item
   Une fois le riz cuit, ajouter les noix et le gorgonzola
 \item
@@ -306,8 +305,8 @@ Un risotto gourmand et fruité
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{steak-vuxe9guxe9tarien}{%
-\subsection*{\texorpdfstring{{Steak végétarien}}{Steak végétarien}}\label{steak-vuxe9guxe9tarien}}
+\subsection*{\texorpdfstring{{Steak
+végétarien}}{Steak végétarien}}\label{steak-vuxe9guxe9tarien}
 \addcontentsline{toc}{subsection}{{Steak végétarien}}
 
 \begin{salebox}
@@ -318,7 +317,7 @@ Des steaks végétariens pour garnir différentes recettes de burgers
 (pomme/chèvre ; comté/champignons)
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -353,21 +352,25 @@ Des steaks végétariens pour garnir différentes recettes de burgers
 \begin{itemize}
 \tightlist
 \item
-  Mixer grossièrement les pois chiches et les haricots rouges (sans les réduire en purée)
+  Mixer grossièrement les pois chiches et les haricots rouges (sans les
+  réduire en purée)
 \item
-  Faire de même avec la carotte, le poivron, l'oignon et l'ail (ou les couper très finement)
+  Faire de même avec la carotte, le poivron, l'oignon et l'ail (ou les
+  couper très finement)
 \item
   Faire revenir l'oignon et l'ail dans un peu d'huile d'olive
 \item
   Rajouter le poivron et la carotte et attendre qu'ils soient cuits
 \item
-  Dans un saladier, mélanger les légumes, les légumineuses, le maïs, les flocons d'avoines, les œufs
+  Dans un saladier, mélanger les légumes, les légumineuses, le maïs, les
+  flocons d'avoines, les œufs
 \item
   Assaisonner selon les envies et mélanger à la main
 \item
   Préchauffer le four à 180°C
 \item
-  Former des galettes d'environ 1 cm d'épaisseur et les déposer sur un papier sulfurisé sur une plaque allant au four
+  Former des galettes d'environ 1 cm d'épaisseur et les déposer sur un
+  papier sulfurisé sur une plaque allant au four
 \item
   Enfourner une quinzaine de minutes puis les retourner
 \item
@@ -378,8 +381,8 @@ Des steaks végétariens pour garnir différentes recettes de burgers
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{riz-sautuxe9-aux-crevettes-et-ananas}{%
-\subsection*{\texorpdfstring{{Riz sauté aux crevettes et ananas}}{Riz sauté aux crevettes et ananas}}\label{riz-sautuxe9-aux-crevettes-et-ananas}}
+\subsection*{\texorpdfstring{{Riz sauté aux crevettes et
+ananas}}{Riz sauté aux crevettes et ananas}}\label{riz-sautuxe9-aux-crevettes-et-ananas}
 \addcontentsline{toc}{subsection}{{Riz sauté aux crevettes et ananas}}
 
 \begin{salebox}
@@ -389,7 +392,7 @@ Temps cuisson : 30 min}
 Un voyage en Asie pour pas cher !
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -412,29 +415,38 @@ Un voyage en Asie pour pas cher !
 \begin{itemize}
 \tightlist
 \item
-  Faire cuire le riz dans un grand volume d'eau selon les indications. Egoutter puis réserver
+  Faire cuire le riz dans un grand volume d'eau selon les indications.
+  Egoutter puis réserver
 \item
-  Décortiquer les crevettes (garder les têtes pour faire un bouillon ou une sauce) et les couper en tronçon de 3 cm environ. Réserver
+  Décortiquer les crevettes (garder les têtes pour faire un bouillon ou
+  une sauce) et les couper en tronçon de 3 cm environ. Réserver
 \item
   Eplucher l'oignon et le couper
 \item
   Pour l'ananas deux possibilités :
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Pour pouvoir l'utiliser en déco (cf.~photo), le couper en deux dans le sens de la longueur. Prélever la chair de chaque moitié en veillant à ne pas abimer la coque
-  \item
-    L'éplucher classiquement en enlevant les yeux (mais les coques ne pourront pas servir)
-  \end{itemize}
 \item
-  Oter le milieu dur de l'ananas et couper en cube de 3 cm de côté environ
+  Pour pouvoir l'utiliser en déco (cf.~photo), le couper en deux dans le
+  sens de la longueur. Prélever la chair de chaque moitié en veillant à
+  ne pas abimer la coque
 \item
-  Dans une sauteuse, mettre de l'huile à chauffer puis ajouter l'oignon et l'ananas. Faire cuire une dizaine de minutes à feu moyen. Réserver dans une assiette
+  L'éplucher classiquement en enlevant les yeux (mais les coques ne
+  pourront pas servir)
 \item
-  Remettre un peu d'huile et faire chauffer. Saisir les crevettes à feu moyen puis déglacer à la sauce soja. Rajouter l'ananas et l'oignon et enfin le riz
+  Oter le milieu dur de l'ananas et couper en cube de 3 cm de côté
+  environ
 \item
-  Laissez cuire une dizaine de minutes et essayant de faire doré un peu le riz. Rajoutez un peu de sauce soja selon les gouts et ajuster l'assaisonnement. Un peu avant la fin de la cuisson, rajouter la coriandre préalablement lavée et triée
+  Dans une sauteuse, mettre de l'huile à chauffer puis ajouter l'oignon
+  et l'ananas. Faire cuire une dizaine de minutes à feu moyen. Réserver
+  dans une assiette
+\item
+  Remettre un peu d'huile et faire chauffer. Saisir les crevettes à feu
+  moyen puis déglacer à la sauce soja. Rajouter l'ananas et l'oignon et
+  enfin le riz
+\item
+  Laissez cuire une dizaine de minutes et essayant de faire doré un peu
+  le riz. Rajoutez un peu de sauce soja selon les gouts et ajuster
+  l'assaisonnement. Un peu avant la fin de la cuisson, rajouter la
+  coriandre préalablement lavée et triée
 \item
   Servir dans les demis ananas ou bien simplement dans une assiette
 \end{itemize}
@@ -445,13 +457,14 @@ Un voyage en Asie pour pas cher !
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sucruxe9}{%
-\section*{Sucré}\label{sucruxe9}}
+\section*{Sucré}\label{sucruxe9}
 \addcontentsline{toc}{section}{Sucré}
 
-\hypertarget{tartelettes-douces-amuxe8res-aux-framboises-et-pamplemousse}{%
-\subsection*{\texorpdfstring{{Tartelettes douces-amères aux framboises et pamplemousse}}{Tartelettes douces-amères aux framboises et pamplemousse}}\label{tartelettes-douces-amuxe8res-aux-framboises-et-pamplemousse}}
-\addcontentsline{toc}{subsection}{{Tartelettes douces-amères aux framboises et pamplemousse}}
+\subsection*{\texorpdfstring{{Tartelettes douces-amères aux framboises
+et
+pamplemousse}}{Tartelettes douces-amères aux framboises et pamplemousse}}\label{tartelettes-douces-amuxe8res-aux-framboises-et-pamplemousse}
+\addcontentsline{toc}{subsection}{{Tartelettes douces-amères aux
+framboises et pamplemousse}}
 
 \begin{sucrebox}
 \textbf{4 tartelettes \textbar{} Temps préparation : 60 min \textbar{}
@@ -461,7 +474,7 @@ Tartelettes avec une bonne amertume, légèrement contrebalancées par la
 douceur de la framboise
 \end{sucrebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -492,19 +505,25 @@ douceur de la framboise
 \item
   Faire cuire les pâtes à blanc
 \item
-  Peler les pamplemousses et les couper grossièrement dans une casserole. Ajouter 40 g de sucre et faire chauffer jusqu'à obtenir une compotée suffisamment réduite
+  Peler les pamplemousses et les couper grossièrement dans une
+  casserole. Ajouter 40 g de sucre et faire chauffer jusqu'à obtenir une
+  compotée suffisamment réduite
 \item
-  A la fin de la cuisson, rajouter 2 g d'agar agar puis refaire bouillir brièvement
+  A la fin de la cuisson, rajouter 2 g d'agar agar puis refaire bouillir
+  brièvement
 \item
   Attendre que la compotée refroidisse et étaler dans les fonds de tarte
 \item
-  Pour le crémeux framboise, battre l'œuf, les jaunes et les 20 g de sucre restants jusqu'à ce que la préparation devienne mousseuse
+  Pour le crémeux framboise, battre l'œuf, les jaunes et les 20 g de
+  sucre restants jusqu'à ce que la préparation devienne mousseuse
 \item
   Mettre la gélatine à réhydrater
 \item
-  Dans une casserole, faire chauffer la purée de framboise jusqu'à ébullition
+  Dans une casserole, faire chauffer la purée de framboise jusqu'à
+  ébullition
 \item
-  Verser la moitié de la purée sur le mélange, mélanger et reverser dans la casserole
+  Verser la moitié de la purée sur le mélange, mélanger et reverser dans
+  la casserole
 \item
   Chauffer en remuant jusqu'à ébullition, retirer du feu
 \item
@@ -514,7 +533,8 @@ douceur de la framboise
 \item
   Mettre au réfrigérateur jusqu'à ce que le crémeux soit pris
 \item
-  Possibilité de rajouter une meringue italienne avec les blancs restants
+  Possibilité de rajouter une meringue italienne avec les blancs
+  restants
 \end{itemize}
 
 \begin{center}\includegraphics[width=0.9\linewidth]{photos/pamp1} \end{center}
@@ -523,8 +543,8 @@ douceur de la framboise
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{banana-bread}{%
-\subsection*{\texorpdfstring{{Banana bread}}{Banana bread}}\label{banana-bread}}
+\subsection*{\texorpdfstring{{Banana
+bread}}{Banana bread}}\label{banana-bread}
 \addcontentsline{toc}{subsection}{{Banana bread}}
 
 \begin{sucrebox}
@@ -553,7 +573,8 @@ Toujours pratique pour un petit déjeuner
 \item
   ½ sachet de levure chimique
 \item
-  Garniture au choix : pépites de chocolat, fruits secs, graines, noisettes, amandes\ldots{}
+  Garniture au choix : pépites de chocolat, fruits secs, graines,
+  noisettes, amandes\ldots{}
 \end{itemize}
 
 \textbf{Consignes}
@@ -561,32 +582,36 @@ Toujours pratique pour un petit déjeuner
 \begin{itemize}
 \tightlist
 \item
-  Mélanger le beurre, l'huile de coco et le sucre et travailler jusqu'à obtenir une texture crémeuse.
+  Mélanger le beurre, l'huile de coco et le sucre et travailler jusqu'à
+  obtenir une texture crémeuse.
 \item
-  Séparer les blancs des jaunes, incorporer les jaunes au mélange précédant
+  Séparer les blancs des jaunes, incorporer les jaunes au mélange
+  précédant
 \item
   Écraser les bananes à la fourchette (ou mixer), et les incorporer
 \item
   Ajouter la farine et la levure. Mélanger
 \item
-  Faire monter les blancs en neige ferme et les incorporer sans les casser avec une cuillère en bois
+  Faire monter les blancs en neige ferme et les incorporer sans les
+  casser avec une cuillère en bois
 \item
   Ajouter la garniture choisie
 \item
-  Verser le tout dans un moule à cake préalablement beurré. Enfourner pour 50 min à 180°C.
+  Verser le tout dans un moule à cake préalablement beurré. Enfourner
+  pour 50 min à 180°C.
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{tartelette-bergamotte-et-suxe9same-noir}{%
-\subsection*{\texorpdfstring{{Tartelette bergamotte et sésame noir}}{Tartelette bergamotte et sésame noir}}\label{tartelette-bergamotte-et-suxe9same-noir}}
-\addcontentsline{toc}{subsection}{{Tartelette bergamotte et sésame noir}}
+\subsection*{\texorpdfstring{{Galette des rois à la
+frangipane}}{Galette des rois à la frangipane}}\label{galette-des-rois-uxe0-la-frangipane}
+\addcontentsline{toc}{subsection}{{Galette des rois à la frangipane}}
 
 \begin{sucrebox}
-\textbf{4 tartelettes \textbar{} Temps préparation : 30 min \textbar{}
-Temps cuisson : 20 min}
+\textbf{1 galette de 32 cm \textbar{} Temps préparation : 1h \textbar{}
+Temps cuisson : 35 min}
 
-Goûts étonnants mais résultat gourmand
+Le grand classique !
 \end{sucrebox}
 
 \textbf{Ingrédients}
@@ -594,41 +619,196 @@ Goûts étonnants mais résultat gourmand
 \begin{itemize}
 \tightlist
 \item
-  4 fonds de tartelettes (pâte sucrée ou sablée, voir par ailleurs)
+  Crème patissière
+
+  \begin{itemize}
+  \tightlist
+  \item
+    210g de lait
+  \item
+    24g de sucre
+  \item
+    16g de maïzena
+  \item
+    24g de jaune d'oeufs
+  \item
+    Un peu d'extrait de vanille
+  \end{itemize}
 \item
-  3 citrons bergamote
+  Crème d'amande
+
+  \begin{itemize}
+  \tightlist
+  \item
+    125g de beurre
+  \item
+    60g de sucre
+  \item
+    175g de poudre d'amandes
+  \item
+    2 oeufs
+  \item
+    8g de maïzena
+  \item
+    2 cuillère à café de rhum
+  \end{itemize}
 \item
-  3 oeufs
+  2 pâtes feuilletées rondes (32cm de diamètre)
 \item
-  40g de sucre
+  1 jaune d'oeuf et 2g de crème liquide (dorure)
 \item
-  Sésame
-\item
-  Purée de sésame noir
-\item
-  ?
+  1 fève
 \end{itemize}
 
 \textbf{Consignes}
 
 \begin{itemize}
+\tightlist
 \item
-  Foncer la pâte dansles cercles à tartelette, piquer le fond (et/ou recouvrir de noyaux de cuisson) et enfourner à 180°C pour une vingtaine de minutes en surveillant bien
+  Réaliser la crème pâtissière en commençant par blanchir les jaunes
+  avec le sucre. Rajouter la maïzena
 \item
+  Faire chauffer le lait. Lorsqu'il arrive au point d'ébullition, en
+  verser la moitié sur le mélange jaunes/sucre/maïzena. Mélanger et
+  reverser dans la casserole. Chauffer jusqu'à ce que la crème
+  épaississe et devienne nappante. Ajouter l'extrait de vanille.
+  Réserver à température ambiante.
+\item
+  Préparer la crème d'amande en mélangeant le beurre pommade, le sucre
+  et la poudre d'amande. Ajouter ensuite maïzena, les oeufs et le rhum.
+\item
+  Mélanger la crème patissière et la crème d'amande pour obtenir une
+  crème frangipane.
+\item
+  Étaler la première pâte feuilletée sur une plaque. Répartir la
+  frangipane en laissant 2cm libres sur les bords. Mettre la fève.
+\item
+  Au pinceau, mouillez les bords librs avec un peu d'eau. Recouvrir avec
+  la seconde pâte feuilletée et appuyer un peu pour coller les deux
+  pâtes ensemble.
+\item
+  Chiqueter les bords, c'est à dire les entailler de manière régulière
+  de façon à former un motif. Badigeoner du mélange jaune/crème et
+  laisser reposer au frigo 30min à 1h.
+\item
+  Passer une seconde couche du mélange jaune/oeuf puis dessiner un motif
+  sur le dessus de la galette avec un couteau. Percer légèrement au
+  milieu et enfourner à 170°C chaleur tournante pour 35min
 \end{itemize}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{photos/galette1} \end{center}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{photos/galette2} \end{center}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{printemps}{%
-\chapter*{Printemps}\label{printemps}}
+\subsection*{\texorpdfstring{{Tarte passion et praliné de sésame
+noir}}{Tarte passion et praliné de sésame noir}}\label{tarte-passion-et-pralinuxe9-de-suxe9same-noir}
+\addcontentsline{toc}{subsection}{{Tarte passion et praliné de sésame
+noir}}
+
+\begin{sucrebox}
+\textbf{1 tarte de 18 cm (4-5 parts) \textbar{} Temps préparation : 1h
+\textbar{} Temps repos : 1h à une nuit}
+
+Un croustillant addictif délicatement réhaussé par la douce acidité de
+la passion.
+\end{sucrebox}
+
+\textbf{Ingrédients}
+
+\begin{itemize}
+\tightlist
+\item
+  Praliné croustillant de sésame noir
+
+  \begin{itemize}
+  \tightlist
+  \item
+    150g de sésame noir
+  \item
+    75g de sucre
+  \item
+    50g de crêpes dentelles
+  \item
+    3 cuillère à soupe d'huile de sésame (ou à défaut d'une huile
+    neutre)
+  \end{itemize}
+\item
+  Crème de passion
+
+  \begin{itemize}
+  \tightlist
+  \item
+    3 oeufs
+  \item
+    50g de sucre
+  \item
+    50g de beurre
+  \item
+    4g de gélatine
+  \item
+    150g de purée de passion
+  \item
+    15g de jus de citron
+  \end{itemize}
+\item
+  1 pâte sucrée (ou un streusel pour un montage en entremet)
+\end{itemize}
+
+\textbf{Consignes}
+
+\begin{itemize}
+\tightlist
+\item
+  Foncer la pâte sucrée dans un cercle de 18cm. Mettre au congélateur
+  une trentaine de minutes. Enfourner dans un four chauffé à 220°C et
+  baisser à 170°C après 8min. Poursuivre 15 à 20min jusqu'à ce que la
+  pâte soi bien dorée (à surveiller).
+\item
+  Faire torréfier le sésame noir au four, 15-20min à 160°C.
+\item
+  Préparer un caramel à sec avec le sucre du praliné. Une fois le sucre
+  fondu et le caramel bien blond, verser le sésame dans la casserole et
+  remuer énergiquement pour bien lier. Sans tarder, verser l'ensemble
+  sur un papier sulfurisé ou silicone pour laisser refroidir
+\item
+  Une fois le bloc durci, briser en morceaux et mettre dans le mixeur
+  avec l'huile de sésame. Mixer jusqu'à obtention d'une consistence
+  pâteuse voire visqueuse.
+\item
+  Mélanger le praliné ainsi obtenu avec les crêpes dentelles émiettées.
+\item
+  Réhydrater la gélatine dans l'eau froide
+\item
+  Fouetter les oeufs avec le sucre puis ajouter purée de passion et le
+  citron. Cuire à feu doux/moyen jusqu'à épaississement sans jamais
+  porter à ébullition. Sortir du feu, ajouter la gélatine puis le beurre
+  et mixer (optionnel) pour émulsionner. Réserver au frigo au moins une
+  heure, idéalement une nuit.
+\item
+  Tartiner le mélange de praliné croustillant dans le fond de tarte.
+  Verser ensuite la couche de passion préalablement retravaillée pour la
+  rendre crémeuse. Lisser le tout et décorer éventuellement de quelques
+  graines de sésame noir.
+\end{itemize}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{photos/pralinesesame_passion1} \end{center}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{photos/pralinesesame_passion2} \end{center}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{photos/pralinesesame_passion3} \end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\chapter*{Printemps}\label{printemps}
 \addcontentsline{toc}{chapter}{Printemps}
 
-\hypertarget{saluxe9-1}{%
-\section*{Salé}\label{saluxe9-1}}
+\section*{Salé}\label{saluxe9-1}
 \addcontentsline{toc}{section}{Salé}
 
-\hypertarget{soupe-de-petits-pois-uxe0-la-menthe}{%
-\subsection*{\texorpdfstring{{Soupe de petits pois à la menthe}}{Soupe de petits pois à la menthe}}\label{soupe-de-petits-pois-uxe0-la-menthe}}
+\subsection*{\texorpdfstring{{Soupe de petits pois à la
+menthe}}{Soupe de petits pois à la menthe}}\label{soupe-de-petits-pois-uxe0-la-menthe}
 \addcontentsline{toc}{subsection}{{Soupe de petits pois à la menthe}}
 
 \begin{salebox}
@@ -638,12 +818,13 @@ Goûts étonnants mais résultat gourmand
 Meilleur rapport effort/plaisir qui soit !
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
 \item
-  1 grosse boite de petits pois en conserve (si frais ou surgelés prévoir cuisson)
+  1 grosse boite de petits pois en conserve (si frais ou surgelés
+  prévoir cuisson)
 \item
   2 cs de crème fraîche
 \item
@@ -664,9 +845,10 @@ Meilleur rapport effort/plaisir qui soit !
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{tajine-dagneau-aux-pruneaux-et-amandes}{%
-\subsection*{\texorpdfstring{{Tajine d'agneau aux pruneaux et amandes}}{Tajine d'agneau aux pruneaux et amandes}}\label{tajine-dagneau-aux-pruneaux-et-amandes}}
-\addcontentsline{toc}{subsection}{{Tajine d'agneau aux pruneaux et amandes}}
+\subsection*{\texorpdfstring{{Tajine d'agneau aux pruneaux et
+amandes}}{Tajine d'agneau aux pruneaux et amandes}}\label{tajine-dagneau-aux-pruneaux-et-amandes}
+\addcontentsline{toc}{subsection}{{Tajine d'agneau aux pruneaux et
+amandes}}
 
 \begin{salebox}
 \textbf{Pour 4 personnes \textbar{} Temps préparation : 20 min
@@ -675,7 +857,7 @@ Meilleur rapport effort/plaisir qui soit !
 Pour un repas de Pâques tolérant et ouvert
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -700,23 +882,27 @@ Pour un repas de Pâques tolérant et ouvert
 \begin{itemize}
 \tightlist
 \item
-  Détailler l'agneau en morceaux de taille moyenen et le faire revenir dans de la matière grasse
+  Détailler l'agneau en morceaux de taille moyenen et le faire revenir
+  dans de la matière grasse
 \item
-  Mouiller avec un peu d'eau et ajouter les tomates, l'oignon, l'ail et les carottes, le tout coupé en cubes
+  Mouiller avec un peu d'eau et ajouter les tomates, l'oignon, l'ail et
+  les carottes, le tout coupé en cubes
 \item
   Laisser mijoter tranquillement à feu doux pendant une bonne heure
 \item
-  Pendant ce temps faire torréfier les amandes au four à 160°C jusqu'à ce qu'elles commencent à colorer
+  Pendant ce temps faire torréfier les amandes au four à 160°C jusqu'à
+  ce qu'elles commencent à colorer
 \item
-  Un peu avant la fin de la cuisson de l'agneau, rajouter les amandes et les pruneaux dénoyautés et coupés en morceaux
+  Un peu avant la fin de la cuisson de l'agneau, rajouter les amandes et
+  les pruneaux dénoyautés et coupés en morceaux
 \item
   Servir avec un accompagnement au choix: semoule\ldots{}
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{tagliatelles-muxealuxe9es-sauce-crevettes}{%
-\subsection*{\texorpdfstring{{Tagliatelles mêlées sauce crevettes}}{Tagliatelles mêlées sauce crevettes}}\label{tagliatelles-muxealuxe9es-sauce-crevettes}}
+\subsection*{\texorpdfstring{{Tagliatelles mêlées sauce
+crevettes}}{Tagliatelles mêlées sauce crevettes}}\label{tagliatelles-muxealuxe9es-sauce-crevettes}
 \addcontentsline{toc}{subsection}{{Tagliatelles mêlées sauce crevettes}}
 
 \begin{salebox}
@@ -726,7 +912,7 @@ Pour un repas de Pâques tolérant et ouvert
 La style et le goût ! Avec uniquement les restes de crevettes.
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -737,7 +923,8 @@ La style et le goût ! Avec uniquement les restes de crevettes.
 \item
   2 carottes
 \item
-  Têtes, pattes et carapaces de crevettes (depuis 400g de crevettes entières)
+  Têtes, pattes et carapaces de crevettes (depuis 400g de crevettes
+  entières)
 \item
   3 cs de farine
 \item
@@ -751,29 +938,46 @@ La style et le goût ! Avec uniquement les restes de crevettes.
 \begin{itemize}
 \tightlist
 \item
-  Mettre un peu d'huile d'olive dans le fond de la casserole, faire revenir les restes de crevettes à feu vif puis mouiller à hauteur. Faire mijoter tranquillement une bonne vingtaine de minutes
+  Mettre un peu d'huile d'olive dans le fond de la casserole, faire
+  revenir les restes de crevettes à feu vif puis mouiller à hauteur.
+  Faire mijoter tranquillement une bonne vingtaine de minutes
 \item
-  Pendant ce temps, découper des tagliatelles de courgettes et de carottes. Le plus simple est d'en découper de fines tranches (dans le sens de la longueur) à l'économe puis de les recouper, toujours dans le sens de la longueur. Garder quelques tranches de courgettes entières pour le dressage (environ 2 par personnes, voir photo).
+  Pendant ce temps, découper des tagliatelles de courgettes et de
+  carottes. Le plus simple est d'en découper de fines tranches (dans le
+  sens de la longueur) à l'économe puis de les recouper, toujours dans
+  le sens de la longueur. Garder quelques tranches de courgettes
+  entières pour le dressage (environ 2 par personnes, voir photo).
 \item
   Filter le bouillon de crevettes et le réserver.
 \item
-  Faire fondre le beuure dans une casserole et rajouter la farine pour faire un roux. Lui ajouter le bouillon de crevettes et bien mélanger pour homogénéiser
+  Faire fondre le beuure dans une casserole et rajouter la farine pour
+  faire un roux. Lui ajouter le bouillon de crevettes et bien mélanger
+  pour homogénéiser
 \item
-  Chauffer assez fort pour faire réduire progressivement jusqu'à ce que la sauce commence à être un peu nappante. Rajouter un peu de fécule si besoin.
+  Chauffer assez fort pour faire réduire progressivement jusqu'à ce que
+  la sauce commence à être un peu nappante. Rajouter un peu de fécule si
+  besoin.
 \item
-  Faire revenir les tagliatelles de carottes dans une poêle avec de l'huile d'olive. Une fois celles-ci quasiment cuites, rajouter les tagliatelles de courgettes quelques minutes (sauf les grandes)
+  Faire revenir les tagliatelles de carottes dans une poêle avec de
+  l'huile d'olive. Une fois celles-ci quasiment cuites, rajouter les
+  tagliatelles de courgettes quelques minutes (sauf les grandes)
 \item
-  Faire blanchir les grandes bandes de courgettes 1 minute dans l'eau bouillante puis les mettre à égoutter sur un tissu absorbant
+  Faire blanchir les grandes bandes de courgettes 1 minute dans l'eau
+  bouillante puis les mettre à égoutter sur un tissu absorbant
 \item
-  Faire cuire les pâtes fraiches, les égoutter puis leur ajouter la sauce. Mélanger délicatement avec les tagliatelles de légumes pour bien mêler le tout
+  Faire cuire les pâtes fraiches, les égoutter puis leur ajouter la
+  sauce. Mélanger délicatement avec les tagliatelles de légumes pour
+  bien mêler le tout
 \item
-  Pour le dressage chemiser l'intérieur d'un cercle à tartelette avec une ou deux bandes larges de courgettes. Servir les pâtes à l'intérieur puis enlever le cercle
+  Pour le dressage chemiser l'intérieur d'un cercle à tartelette avec
+  une ou deux bandes larges de courgettes. Servir les pâtes à
+  l'intérieur puis enlever le cercle
 \end{itemize}
 
 \begin{center}\includegraphics[width=0.9\linewidth]{photos/tagliatelles_crevettes} \end{center}
 
-\hypertarget{gnudi-cresson-et-ricotta}{%
-\subsection*{\texorpdfstring{{\emph{Gnudi} cresson et ricotta}}{Gnudi cresson et ricotta}}\label{gnudi-cresson-et-ricotta}}
+\subsection*{\texorpdfstring{{\emph{Gnudi} cresson et
+ricotta}}{Gnudi cresson et ricotta}}\label{gnudi-cresson-et-ricotta}
 \addcontentsline{toc}{subsection}{{\emph{Gnudi} cresson et ricotta}}
 
 \begin{salebox}
@@ -783,7 +987,7 @@ Temps cuisson : 15 min \textbar{} Temps repos : 30 min}
 Vous connaissiez les \emph{gnocchi}, vous aimerez les \emph{gnudi} !
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -804,7 +1008,8 @@ Vous connaissiez les \emph{gnocchi}, vous aimerez les \emph{gnudi} !
 \item
   25g de beurre
 \item
-  Un peu de fromage à râper: parmesan idéalement, vieille mimolette\ldots{}
+  Un peu de fromage à râper: parmesan idéalement, vieille
+  mimolette\ldots{}
 \end{itemize}
 
 \textbf{Consignes}
@@ -814,21 +1019,31 @@ Vous connaissiez les \emph{gnocchi}, vous aimerez les \emph{gnudi} !
 \item
   Laver et trier le cresson, en enlevant le plus gros de tiges
 \item
-  Faire tomber les feuilles de cresson en les faisant chauffer dans une casserole
+  Faire tomber les feuilles de cresson en les faisant chauffer dans une
+  casserole
 \item
   Les laisser s'égoutter puis les hacher finement
 \item
-  Le mélanger avec la ricotta puis rajouter l'œuf, la panure et enfin la farine
+  Le mélanger avec la ricotta puis rajouter l'œuf, la panure et enfin la
+  farine
 \item
   Bien mélanger, assaisonner et laisser reposer 30 min au réfrigérateur
 \item
-  Dans une assiette, verser un peu de farine puis former des petites sphères avec la pâte (de la forme de gnocchi) et les passer dans la farine pour les enrober (si la préparation est trop collante rajouter un peu de farine dans la préparation mais elle doit quand même rester un peu collante)
+  Dans une assiette, verser un peu de farine puis former des petites
+  sphères avec la pâte (de la forme de gnocchi) et les passer dans la
+  farine pour les enrober (si la préparation est trop collante rajouter
+  un peu de farine dans la préparation mais elle doit quand même rester
+  un peu collante)
 \item
-  Faire chauffer une grande quantité d'eau et une fois à ébullition, plonger les gnudi délicatement dedans. Lorsqu'il remonte à la surface c'est qu'ils sont cuits.
+  Faire chauffer une grande quantité d'eau et une fois à ébullition,
+  plonger les gnudi délicatement dedans. Lorsqu'il remonte à la surface
+  c'est qu'ils sont cuits.
 \item
-  Pendant la cuisson, faire chauffer dans une sauteuse le beurre et y faire revenir l'ail et le zeste de citron
+  Pendant la cuisson, faire chauffer dans une sauteuse le beurre et y
+  faire revenir l'ail et le zeste de citron
 \item
-  Lorsque les gnudi sont cuits, les sortir de l'eau à l'aide d'une écumoire et les mettre directement dans le beurre
+  Lorsque les gnudi sont cuits, les sortir de l'eau à l'aide d'une
+  écumoire et les mettre directement dans le beurre
 \item
   Les faire revenir quelques minutes dans le beurre puis servir
 \item
@@ -841,13 +1056,13 @@ Vous connaissiez les \emph{gnocchi}, vous aimerez les \emph{gnudi} !
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sucruxe9-1}{%
-\section*{Sucré}\label{sucruxe9-1}}
+\section*{Sucré}\label{sucruxe9-1}
 \addcontentsline{toc}{section}{Sucré}
 
-\hypertarget{tartelettes-citron-menthe-sans-cuisson}{%
-\subsection*{\texorpdfstring{{Tartelettes citron-menthe sans cuisson}}{Tartelettes citron-menthe sans cuisson}}\label{tartelettes-citron-menthe-sans-cuisson}}
-\addcontentsline{toc}{subsection}{{Tartelettes citron-menthe sans cuisson}}
+\subsection*{\texorpdfstring{{Tartelettes citron-menthe sans
+cuisson}}{Tartelettes citron-menthe sans cuisson}}\label{tartelettes-citron-menthe-sans-cuisson}
+\addcontentsline{toc}{subsection}{{Tartelettes citron-menthe sans
+cuisson}}
 
 \begin{sucrebox}
 \textbf{4 tartelettes (10 cm) \textbar{} Temps préparation : 40 min
@@ -857,7 +1072,7 @@ Vous connaissiez les \emph{gnocchi}, vous aimerez les \emph{gnudi} !
 Recette intégralement sans cuisson
 \end{sucrebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -892,15 +1107,22 @@ Recette intégralement sans cuisson
 \item
   Mixer les flocons d'avoine et les noisettes jusqu'à obtenir une poudre
 \item
-  Rajouter les dattes et l'huile de coco (amollie ou fondue) puis mixer à nouveau jusq'à obtenir une consistance pateuse
+  Rajouter les dattes et l'huile de coco (amollie ou fondue) puis mixer
+  à nouveau jusq'à obtenir une consistance pateuse
 \item
-  Foncer la pâte dans des cerles à tartelettes préalablement chemisés de filme alimentaire. Bien marquer les pourtours. Laisser prendre au frais au moins une heure
+  Foncer la pâte dans des cerles à tartelettes préalablement chemisés de
+  filme alimentaire. Bien marquer les pourtours. Laisser prendre au
+  frais au moins une heure
 \item
-  Faire chauffer le jus et le zeste des citrons avec le sucre, les oeufs battus et les deux gouttes d'huile essentielle. Bien remuer jusq'à épaisissement
+  Faire chauffer le jus et le zeste des citrons avec le sucre, les oeufs
+  battus et les deux gouttes d'huile essentielle. Bien remuer jusq'à
+  épaisissement
 \item
-  Sortir du feu et ajouter le beurre et la gélatine (réhydratée) avant d'homogénéiser
+  Sortir du feu et ajouter le beurre et la gélatine (réhydratée) avant
+  d'homogénéiser
 \item
-  Couler l'appareil dans les fonds de tartes et remettre à prendre au frais
+  Couler l'appareil dans les fonds de tartes et remettre à prendre au
+  frais
 \item
   Décorer de quelques feuilles de menthe
 \end{itemize}
@@ -909,27 +1131,25 @@ Recette intégralement sans cuisson
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{uxe9tuxe9}{%
-\chapter*{Été}\label{uxe9tuxe9}}
+\chapter*{Été}\label{uxe9tuxe9}
 \addcontentsline{toc}{chapter}{Été}
 
-\hypertarget{saluxe9-2}{%
-\section*{Salé}\label{saluxe9-2}}
+\section*{Salé}\label{saluxe9-2}
 \addcontentsline{toc}{section}{Salé}
 
-\hypertarget{pesto-de-coriandre-aux-amandes}{%
-\subsection*{\texorpdfstring{{Pesto de coriandre aux amandes}}{Pesto de coriandre aux amandes}}\label{pesto-de-coriandre-aux-amandes}}
+\subsection*{\texorpdfstring{{Pesto de coriandre aux
+amandes}}{Pesto de coriandre aux amandes}}\label{pesto-de-coriandre-aux-amandes}
 \addcontentsline{toc}{subsection}{{Pesto de coriandre aux amandes}}
 
 \begin{salebox}
 \textbf{Pour un petit pot \textbar{} Temps préparation : 10 min
 \textbar{} Temps cuisson : 0 min}
 
-Condiment idéal pour cuire un poisson en y ajoutant un peu de chapelure
-ou pour simplement agrémenter un plan de pâtes.
+Condiment idéal pour cuire un poisson en croûte en y ajoutant un peu de
+chapelure ou pour simplement agrémenter un plan de pâtes.
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -952,20 +1172,25 @@ ou pour simplement agrémenter un plan de pâtes.
 \item
   ELaver et bien sécher la coriandre
 \item
-  Trier les tiges et ne garder que les feuilles, les placer dans le mixer
+  Trier les tiges et ne garder que les feuilles, les placer dans le
+  mixer
 \item
-  Ajouter les amandes, les graines de tournesol, la gousse d'ail dégermée et coupée en morceaux
+  Ajouter les amandes, les graines de tournesol, la gousse d'ail
+  dégermée et coupée en morceaux
 \item
-  Mettre de l'huile et commencer à mixer. Ajuster l'huile pour obtenir la consistance et le gout souhaité
+  Mettre de l'huile et commencer à mixer. Ajuster l'huile pour obtenir
+  la consistance et le gout souhaité
 \item
-  Utiliser tout de suite ou conserver dans un pot en verre au frigo pendant une petite semaine
+  Utiliser tout de suite ou conserver dans un pot en verre au frigo
+  pendant une petite semaine
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{caviar-de-courgettes-soja-et-suxe9same}{%
-\subsection*{\texorpdfstring{{Caviar de courgettes, soja et sésame}}{Caviar de courgettes, soja et sésame}}\label{caviar-de-courgettes-soja-et-suxe9same}}
-\addcontentsline{toc}{subsection}{{Caviar de courgettes, soja et sésame}}
+\subsection*{\texorpdfstring{{Caviar de courgettes, soja et
+sésame}}{Caviar de courgettes, soja et sésame}}\label{caviar-de-courgettes-soja-et-suxe9same}
+\addcontentsline{toc}{subsection}{{Caviar de courgettes, soja et
+sésame}}
 
 \begin{salebox}
 \textbf{\textasciitilde{}Pour 3 personnes \textbar{} Temps préparation :
@@ -974,7 +1199,7 @@ ou pour simplement agrémenter un plan de pâtes.
 A tartiner ou bien pour en accompagnement d'un poisson
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -997,7 +1222,8 @@ A tartiner ou bien pour en accompagnement d'un poisson
 \begin{itemize}
 \tightlist
 \item
-  Couper l'oignon grossièrement et mettre à suer dans un peu d'huile d'olive
+  Couper l'oignon grossièrement et mettre à suer dans un peu d'huile
+  d'olive
 \item
   Quand il a doré, déglacer avec la sauce soja
 \item
@@ -1009,15 +1235,16 @@ A tartiner ou bien pour en accompagnement d'un poisson
 \item
   Mixer jusqu'à obtenir une consistance crémeuse
 \item
-  Selon les envies, placer au frais pour déguster froid ou bien déguster tiède
+  Selon les envies, placer au frais pour déguster froid ou bien déguster
+  tiède
 \item
   Au moment de servir, rajouter les graines de sésames
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{gaspacho-de-tomates-au-lait-de-coco}{%
-\subsection*{\texorpdfstring{{Gaspacho de tomates au lait de coco}}{Gaspacho de tomates au lait de coco}}\label{gaspacho-de-tomates-au-lait-de-coco}}
+\subsection*{\texorpdfstring{{Gaspacho de tomates au lait de
+coco}}{Gaspacho de tomates au lait de coco}}\label{gaspacho-de-tomates-au-lait-de-coco}
 \addcontentsline{toc}{subsection}{{Gaspacho de tomates au lait de coco}}
 
 \begin{salebox}
@@ -1027,7 +1254,7 @@ Temps cuisson : 20 min \textbar{} Temps de repos : 1h (refroidissement)}
 Une belle entrée d'été, rafraichissante et relevée !
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -1056,15 +1283,18 @@ Une belle entrée d'été, rafraichissante et relevée !
 \item
   Éplucher et épépiner grossièrement les tomates
 \item
-  Émincer l'oignon et la citronnelle assez finement, éplucher le gingembre
+  Émincer l'oignon et la citronnelle assez finement, éplucher le
+  gingembre
 \item
   Les faire revenir dans de l'huile d'olive
 \item
   Rajouter ensuite les tomates coupées en morceaux
 \item
-  Faire cuire quelques minutes puis rajouter l'intégralité du lait de coco et le piment
+  Faire cuire quelques minutes puis rajouter l'intégralité du lait de
+  coco et le piment
 \item
-  Complétez avec de l'eau pour que les tomates soient quasiment submergées
+  Complétez avec de l'eau pour que les tomates soient quasiment
+  submergées
 \item
   Cuire 20 min puis mixer. Gouter, ajuster l'assaisonnement
 \item
@@ -1073,8 +1303,8 @@ Une belle entrée d'été, rafraichissante et relevée !
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{soupe-froide-de-poivron}{%
-\subsection*{\texorpdfstring{{Soupe froide de poivron}}{Soupe froide de poivron}}\label{soupe-froide-de-poivron}}
+\subsection*{\texorpdfstring{{Soupe froide de
+poivron}}{Soupe froide de poivron}}\label{soupe-froide-de-poivron}
 \addcontentsline{toc}{subsection}{{Soupe froide de poivron}}
 
 \begin{salebox}
@@ -1085,7 +1315,7 @@ de repos : 1h (refroidissement)}
 Douceur estivale et rafraichissante
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -1104,9 +1334,11 @@ Douceur estivale et rafraichissante
 \item
   Laver, puis couper les poivrons en deux et ôter les pépins
 \item
-  Les déposer sur une plaque allant au four, mettre sur la fonction grill
+  Les déposer sur une plaque allant au four, mettre sur la fonction
+  grill
 \item
-  Les sortir lorsque la peau a noirci (20-30 min) et les mettre immédiatement dans un Tupperware ou un sac congélation
+  Les sortir lorsque la peau a noirci (20-30 min) et les mettre
+  immédiatement dans un Tupperware ou un sac congélation
 \item
   Fermer et les laisser au moins 30 min voire plusieurs heures
 \item
@@ -1114,15 +1346,16 @@ Douceur estivale et rafraichissante
 \item
   Les placer dans le mixer avec un peu d'eau, le basilic et la crème
 \item
-  Mixer jusqu'à obtenir une consistance crémeuse en ajustant si besoin avec de la crème ou de l'eau
+  Mixer jusqu'à obtenir une consistance crémeuse en ajustant si besoin
+  avec de la crème ou de l'eau
 \item
   Assaisonner et mettre au réfrigérateur pour déguster froid
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{tatin-de-tomates-cerise}{%
-\subsection*{\texorpdfstring{{Tatin de tomates cerise}}{Tatin de tomates cerise}}\label{tatin-de-tomates-cerise}}
+\subsection*{\texorpdfstring{{Tatin de tomates
+cerise}}{Tatin de tomates cerise}}\label{tatin-de-tomates-cerise}
 \addcontentsline{toc}{subsection}{{Tatin de tomates cerise}}
 
 \begin{salebox}
@@ -1132,7 +1365,7 @@ préparation : 15 min \textbar{} Temps cuisson : 20 min}
 Les tomates cerises valent mieux qu'un apéro !
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -1157,33 +1390,44 @@ Les tomates cerises valent mieux qu'un apéro !
 \begin{itemize}
 \tightlist
 \item
-  Laver les tomates cerise et les percer de part en part avec un cure-dent
+  Laver les tomates cerise et les percer de part en part avec un
+  cure-dent
 \item
-  Les faires revenir dans une grande poêle feu doux avec un peu de vinaigre balsamique (1 cs) jusqu'à ce qu'elles aient rendu une bonne partie de leur eau
+  Les faires revenir dans une grande poêle feu doux avec un peu de
+  vinaigre balsamique (1 cs) jusqu'à ce qu'elles aient rendu une bonne
+  partie de leur eau
 \item
-  Égoutter les tomates cerises, éventuellement à la passoire, en faisant attention à ne pas trop les abimer les tomates cerises. Les réserver.
+  Égoutter les tomates cerises, éventuellement à la passoire, en faisant
+  attention à ne pas trop les abimer les tomates cerises. Les réserver.
 \item
-  Mettre le sucre dans la poêle et attendre qu'il caramélise un peu sans remuer
+  Mettre le sucre dans la poêle et attendre qu'il caramélise un peu sans
+  remuer
 \item
-  Rajouter les tomates cerises, les herbes et laisser les tomates cerises se caraméliser un peu à leur tour. Rajouter éventuellement un peu de vinaigre selon les gouts
+  Rajouter les tomates cerises, les herbes et laisser les tomates
+  cerises se caraméliser un peu à leur tour. Rajouter éventuellement un
+  peu de vinaigre selon les gouts
 \item
-  Verser délicatement les tomates dans un plat à quiche recouvert préalablement de papier sulfurisé. * Laisser un peu de place sur les bords
+  Verser délicatement les tomates dans un plat à quiche recouvert
+  préalablement de papier sulfurisé. * Laisser un peu de place sur les
+  bords
 \item
-  Recouvrir de la pâte feuilletée en repliant et appuyant les bords de pâtes sur les côtés du plat. * Percer légèrement le centre de la pâte avec la pointe d'un couteau
+  Recouvrir de la pâte feuilletée en repliant et appuyant les bords de
+  pâtes sur les côtés du plat. * Percer légèrement le centre de la pâte
+  avec la pointe d'un couteau
 \item
-  Enfourner à 180°C pour 25 min environ jusqu'à ce que la pâte soit légèrement dorée sur le dessus
+  Enfourner à 180°C pour 25 min environ jusqu'à ce que la pâte soit
+  légèrement dorée sur le dessus
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sucruxe9-2}{%
-\section*{Sucré}\label{sucruxe9-2}}
+\section*{Sucré}\label{sucruxe9-2}
 \addcontentsline{toc}{section}{Sucré}
 
-\hypertarget{fiadone-corse}{%
-\subsection*{\texorpdfstring{{Fiadone corse}}{Fiadone corse}}\label{fiadone-corse}}
+\subsection*{\texorpdfstring{{Fiadone
+corse}}{Fiadone corse}}\label{fiadone-corse}
 \addcontentsline{toc}{subsection}{{Fiadone corse}}
 
 \begin{sucrebox}
@@ -1193,7 +1437,7 @@ Temps cuisson : 35 min}
 La tradition corse, pour une fin de repas légère et fraiche !
 \end{sucrebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -1220,9 +1464,11 @@ La tradition corse, pour une fin de repas légère et fraiche !
 \item
   Séparer les blancs des jaunes
 \item
-  Mélanger les jaunes avec le sucre. Ajouter ensuite le brocciu sans trop battre puis le zeste et le jus de citron
+  Mélanger les jaunes avec le sucre. Ajouter ensuite le brocciu sans
+  trop battre puis le zeste et le jus de citron
 \item
-  Monter les blancs en neige très ferme. Incorporer les délicatement à la spatule à la préparation précédente
+  Monter les blancs en neige très ferme. Incorporer les délicatement à
+  la spatule à la préparation précédente
 \item
   Beurrer un moule à tarte ou à manquer, verser et égaliser les pâtes
 \item
@@ -1235,8 +1481,8 @@ La tradition corse, pour une fin de repas légère et fraiche !
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{tarte-framboise-et-thuxe9-matcha}{%
-\subsection*{\texorpdfstring{{Tarte framboise et thé matcha}}{Tarte framboise et thé matcha}}\label{tarte-framboise-et-thuxe9-matcha}}
+\subsection*{\texorpdfstring{{Tarte framboise et thé
+matcha}}{Tarte framboise et thé matcha}}\label{tarte-framboise-et-thuxe9-matcha}
 \addcontentsline{toc}{subsection}{{Tarte framboise et thé matcha}}
 
 \begin{sucrebox}
@@ -1303,21 +1549,28 @@ Pour un résultat gustatif et esthétique, sans trop de difficultés
 \item
   Ajouter ensuite jaunes d'œufs, farine, levure et sel puis homogénéiser
 \item
-  Foncer et aplanir la pâte dans le cadre posé sur une feuille de papier sulfurisé
+  Foncer et aplanir la pâte dans le cadre posé sur une feuille de papier
+  sulfurisé
 \item
-  Faire cuire le biscuit 20 à 30 min. Le décadrer/démouler une fois refroidi
+  Faire cuire le biscuit 20 à 30 min. Le décadrer/démouler une fois
+  refroidi
 \item
   Mélanger le sucre de la crème pâtissière avec le thé matcha
 \item
-  Blanchir les jaunes avec le mélange sucre-matcha dans un cul-de poule puis ajouter la maïzena
+  Blanchir les jaunes avec le mélange sucre-matcha dans un cul-de poule
+  puis ajouter la maïzena
 \item
-  Mettre le lait à bouillir dans une casserole, en verser la moitié sur le mélange précédent et fouetter
+  Mettre le lait à bouillir dans une casserole, en verser la moitié sur
+  le mélange précédent et fouetter
 \item
-  Remettre le tout dans la casserole et chauffer en fouettant jusqu'à épaississement. Stopper la cuisson un peu avant la consistance souhaitée puis incorporer le beurre
+  Remettre le tout dans la casserole et chauffer en fouettant jusqu'à
+  épaississement. Stopper la cuisson un peu avant la consistance
+  souhaitée puis incorporer le beurre
 \item
   Laisser reposer jusqu'à ce que la crême soit froide
 \item
-  Monter la tarte en alternant framboise et points de crème matcha déposés à la poche à douille
+  Monter la tarte en alternant framboise et points de crème matcha
+  déposés à la poche à douille
 \end{itemize}
 
 \begin{center}\includegraphics[width=0.9\linewidth]{photos/framb_matcha1} \end{center}
@@ -1326,8 +1579,194 @@ Pour un résultat gustatif et esthétique, sans trop de difficultés
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{confiture-puxeache-menthe}{%
-\subsection*{\texorpdfstring{{Confiture pêche-menthe}}{Confiture pêche-menthe}}\label{confiture-puxeache-menthe}}
+\subsection*{\texorpdfstring{{Entremet framboises et sésame
+noir}}{Entremet framboises et sésame noir}}\label{entremet-framboises-et-suxe9same-noir}
+\addcontentsline{toc}{subsection}{{Entremet framboises et sésame noir}}
+
+\begin{sucrebox}
+\textbf{Pour un moule de 25cm de diamètre (10 parts) \textbar{} Temps
+préparation : 2h min \textbar{} Temps repos : une nuit (et plusieurs
+heures de décongélation) \textbar{} Temps cuisson : 30 min}
+
+Un entremet tout en légereté et en douceur !
+\end{sucrebox}
+
+\textbf{Ingrédients}
+
+\begin{itemize}
+\tightlist
+\item
+  Base de streusel
+
+  \begin{itemize}
+  \tightlist
+  \item
+    90g de beurre
+  \item
+    90g de cassonade
+  \item
+    90g de farine
+  \item
+    1 pincée de sel
+  \item
+    105g de poudre d'amandes
+  \end{itemize}
+\item
+  Dacquoise
+
+  \begin{itemize}
+  \tightlist
+  \item
+    80g de poudre d'amandes
+  \item
+    65g de sucre glace
+  \item
+    16g de farine
+  \item
+    90g de blanc d'oeufs
+  \item
+    33g de sucre en poudre
+  \end{itemize}
+\item
+  Crémeux sésame noir
+
+  \begin{itemize}
+  \tightlist
+  \item
+    250g de crème liquide entière
+  \item
+    25g de sucre
+  \item
+    50g de jaune d'oeuf
+  \item
+    25g de pâte de sésame noir
+  \item
+    2g de gélatine
+  \end{itemize}
+\item
+  Mousse framboise (peut se diminuer un peu)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    425g de pulpe/purée framboise
+  \item
+    17g de gélatine
+  \item
+    37g d'eau
+  \item
+    114g de sucre
+  \item
+    56g de blancs d'oeufs
+  \item
+    425g de crème liquide entière
+  \end{itemize}
+\end{itemize}
+
+\textbf{Consignes}
+
+Crémeux sésame noir
+
+\begin{itemize}
+\tightlist
+\item
+  Réhydrater la gélatine dans un volume d'eau froide.
+\item
+  Blanchir les jaunes d'œuf avec le sucre. Porter à ébullition la crème
+  avec la pâte de sésame et la verser sur le mélange jaunes
+  d'oeuf-sucre. Remettre le tout dans la casserole et cuire à 82°C (la
+  crème doit napper la spatule).
+\item
+  Hors du feu ajouter la gélatine et couler le crémeux dans un cercle,
+  idéalement légèrement plus petit que le moule finale (environ 23cm).
+  Bloquer au congélateur.
+\end{itemize}
+
+Dacquoise
+
+\begin{itemize}
+\tightlist
+\item
+  Monter les blancs d'oeufs en incorporant le sucre en poudre dès que
+  ces derniers commencent à mousser. Ajouter ensuite délicatement le
+  mélange sucre glace/poudre d'amande/farine. A l'aide d'une poche munie
+  d'une grosse douille unie, dresser un biscuit de même taille que le
+  crémeux sésame.
+\item
+  Cuire la dacquoise 10-12 minutes à 180°c. Elle doit être à peine
+  dorée, et la retirer de la plaque de cuisson dès la sortie du four.
+\end{itemize}
+
+Streusel
+
+\begin{itemize}
+\tightlist
+\item
+  Travailler à la main tous les ingrédients jusqu'à obtention d'une pâte
+  homogène.
+\item
+  L'étaler uniformément à l'aide de vos doigts dans votre moule à manqué
+  et cuire environ 25 minutes à 170°c. Le streusel doit être joliment
+  doré. Laisser refroidir, décercler et réserver.
+\end{itemize}
+
+Mousse framboise
+
+\begin{itemize}
+\tightlist
+\item
+  Monter la crème liquide en chantilly et la réserver au frais
+\item
+  Mettre la gélatine à tremper dans un grand bol d'eau froide.
+\item
+  Réaliser une meringue italienne. Verser dans une petite casserole
+  l'eau et le sucre. Démarrer à feu doux et monter jusqu'à 121°C.
+\item
+  En parallèle monter les blanc d'oeuf jusqu'à qu'ils soient mousseux.
+  Quand le sucre est cuit, verser sur les blancs et fouetter à nouveau
+  jusqu'à revenir à température ambiante.
+\item
+  Égoutter la gélatine et la mettre à fondre dans la pulpe de framboise
+  préalablement réchauffée. Foutter pour incorporer puis refroidir
+  jusqu'à température ambiante.
+\item
+  Verser la pulpe dans un saladier. Ajouter ensuite la moitié de la
+  meringue italienne puis mélanger doucement à la maryse ou à l'aide
+  d'un fouet (lentement).
+\item
+  Ajouter ensuite la moitié de la crème montée et mélanger de la même
+  façon. * Faire ensuite de même avec le reste de meringue italienne et
+  terminer par ce qu'il reste de crème montée.
+\end{itemize}
+
+Montage
+
+\begin{itemize}
+\tightlist
+\item
+  Chemiser les bords intérieurs du moule à manqué.
+\item
+  Verser un peu plus de la moitié de la mousse framboise sur le streusel
+  en essayant de ``tartiner'' les bords.
+\item
+  Déposer le cercle de dacquoise (éventuellement redécoupé) puis le
+  cercle de crémeux sésame par dessus. Appuyer légèrement pour faire
+  remonter la mousse sur les côtés.
+\item
+  Verser le reste de mousse et aplanir au mieux la surface
+\item
+  Décorer éventuellement de graines de séames et placer au congélateur
+  pour la nuit
+\item
+  Décongeler au moins 4h à température ambiante
+\end{itemize}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{photos/entremet_sesamenoir} \end{center}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection*{\texorpdfstring{{Confiture
+pêche-menthe}}{Confiture pêche-menthe}}\label{confiture-puxeache-menthe}
 \addcontentsline{toc}{subsection}{{Confiture pêche-menthe}}
 
 \begin{sucrebox}
@@ -1363,15 +1802,18 @@ d'été jusqu'au coeur de l'hiver !
 \item
   Faire macérer de quelques heures jusqu'à toute une nuit
 \item
-  Faire cuire à feu moyen en remuant sans cesse au moins une vingtaine de minutes : l'écume va commencer à se former puis devra avoir totalement disparu. Faire le test de l'assiette pour savoir si la confiture est cuite
+  Faire cuire à feu moyen en remuant sans cesse au moins une vingtaine
+  de minutes : l'écume va commencer à se former puis devra avoir
+  totalement disparu. Faire le test de l'assiette pour savoir si la
+  confiture est cuite
 \item
   Mettre en pot directement. Les fermer et les retourner immédiatement
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{confiture-abricotromarinamande}{%
-\subsection*{\texorpdfstring{{Confiture abricot/romarin/amande}}{Confiture abricot/romarin/amande}}\label{confiture-abricotromarinamande}}
+\subsection*{\texorpdfstring{{Confiture
+abricot/romarin/amande}}{Confiture abricot/romarin/amande}}\label{confiture-abricotromarinamande}
 \addcontentsline{toc}{subsection}{{Confiture abricot/romarin/amande}}
 
 \begin{sucrebox}
@@ -1409,7 +1851,10 @@ d'été jusqu'au coeur de l'hiver !
 \item
   Faire macérer de quelques heures jusqu'à toute une nuit
 \item
-  Faire cuire à feu moyen en remuant sans cesse au moins une vingtaine de minutes : l'écume va commencer à se former puis devra avoir totalement disparu. Faire le test de l'assiette pour savoir si la confiture est cuite.
+  Faire cuire à feu moyen en remuant sans cesse au moins une vingtaine
+  de minutes : l'écume va commencer à se former puis devra avoir
+  totalement disparu. Faire le test de l'assiette pour savoir si la
+  confiture est cuite.
 \item
   Retirer les branches de romarin
 \item
@@ -1420,16 +1865,14 @@ d'été jusqu'au coeur de l'hiver !
 
 \begin{center}\includegraphics[width=0.9\linewidth]{photos/conf2} \end{center}
 
-\hypertarget{automne}{%
-\chapter*{Automne}\label{automne}}
+\chapter*{Automne}\label{automne}
 \addcontentsline{toc}{chapter}{Automne}
 
-\hypertarget{saluxe9-3}{%
-\section*{Salé}\label{saluxe9-3}}
+\section*{Salé}\label{saluxe9-3}
 \addcontentsline{toc}{section}{Salé}
 
-\hypertarget{gratin-de-courge-aux-crozets}{%
-\subsection*{\texorpdfstring{{Gratin de courge aux crozets}}{Gratin de courge aux crozets}}\label{gratin-de-courge-aux-crozets}}
+\subsection*{\texorpdfstring{{Gratin de courge aux
+crozets}}{Gratin de courge aux crozets}}\label{gratin-de-courge-aux-crozets}
 \addcontentsline{toc}{subsection}{{Gratin de courge aux crozets}}
 
 \begin{salebox}
@@ -1439,7 +1882,7 @@ d'été jusqu'au coeur de l'hiver !
 Chaleureux et consistent
 \end{salebox}
 
-\textbf{Ingrédients}
+ \textbf{Ingrédients}
 
 \begin{itemize}
 \tightlist
@@ -1462,11 +1905,16 @@ Chaleureux et consistent
 \begin{itemize}
 \tightlist
 \item
-  Détailler la courge en petits dés et les faire cuire au four à 180°C une quinzaine de minutes (ils doivent être quasiment cuits mais légèrement fermes encore). On peut mettre la poignée de noisettes avec en cours de cuisson pour les torréfier un peu.
+  Détailler la courge en petits dés et les faire cuire au four à 180°C
+  une quinzaine de minutes (ils doivent être quasiment cuits mais
+  légèrement fermes encore). On peut mettre la poignée de noisettes avec
+  en cours de cuisson pour les torréfier un peu.
 \item
-  Faire cuire les crozets dans l'eau bouillante puis les assaisonner d'un peu de sel, de poivre et d'une noix de beurre
+  Faire cuire les crozets dans l'eau bouillante puis les assaisonner
+  d'un peu de sel, de poivre et d'une noix de beurre
 \item
-  Mélanger dés de courge, Crozet et noisettes dans un plat à gratin. Arroser d'un peu de crème liquide, de panure et de fromage râpé
+  Mélanger dés de courge, Crozet et noisettes dans un plat à gratin.
+  Arroser d'un peu de crème liquide, de panure et de fromage râpé
 \item
   Enfourner le temps que le dessus gratine
 \end{itemize}
@@ -1477,12 +1925,11 @@ Chaleureux et consistent
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sucruxe9-3}{%
-\section*{Sucré}\label{sucruxe9-3}}
+\section*{Sucré}\label{sucruxe9-3}
 \addcontentsline{toc}{section}{Sucré}
 
-\hypertarget{creusois-aux-fruits}{%
-\subsection*{\texorpdfstring{{Creusois aux fruits}}{Creusois aux fruits}}\label{creusois-aux-fruits}}
+\subsection*{\texorpdfstring{{Creusois aux
+fruits}}{Creusois aux fruits}}\label{creusois-aux-fruits}
 \addcontentsline{toc}{subsection}{{Creusois aux fruits}}
 
 \begin{sucrebox}
@@ -1515,11 +1962,13 @@ Un bon goûter pour un jour pluvieux
 \begin{itemize}
 \tightlist
 \item
-  Griller légèrement les noisettes à la poêle ou au four puis les réduire en poudre pas trop grossière
+  Griller légèrement les noisettes à la poêle ou au four puis les
+  réduire en poudre pas trop grossière
 \item
   Monter les blancs en neige
 \item
-  Mélanger farine, sucre et beurre fondu. Ajouter progressivement les blancs montés en neige avec une spatule en bois sans trop les casser.
+  Mélanger farine, sucre et beurre fondu. Ajouter progressivement les
+  blancs montés en neige avec une spatule en bois sans trop les casser.
 \item
   Une fois la pâte lissée, ajouter la poudre de noisette et homogénéiser
 \item
@@ -1529,7 +1978,8 @@ Un bon goûter pour un jour pluvieux
 \item
   Disposer les fruits en les enfonçant dans la pâte
 \item
-  Cuire 45 min à 180°C ; ajuster la durée en fonction de l'humidité apportée par les fruits
+  Cuire 45 min à 180°C ; ajuster la durée en fonction de l'humidité
+  apportée par les fruits
 \end{itemize}
 
 \begin{center}\includegraphics[width=0.9\linewidth]{photos/creusois} \end{center}
